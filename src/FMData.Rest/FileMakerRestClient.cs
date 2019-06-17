@@ -161,7 +161,7 @@ namespace FMData.Rest
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, AuthEndpoint());
             requestMessage.Headers.Authorization = authHeader;
             requestMessage.Content = new StringContent("{ }", Encoding.UTF8, "application/json");
-
+            requestMessage.Headers.ContentType.CharSet = null;
             // run the post action
             var response = await _client.SendAsync(requestMessage);
 
